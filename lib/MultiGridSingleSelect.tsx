@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
  * ? Local Imports
  */
 import styles from "./MultiGridSingleSelect.style";
+import SelectButton from "./components/SelectButton/SelectButton";
 
 interface IMultiGridSingleSelectProps {}
 
@@ -16,7 +17,7 @@ export default class MultiGridSingleSelect extends Component<
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <SelectButton text="Hellooo" onPress={() => {}} />
       </View>
     );
   }
