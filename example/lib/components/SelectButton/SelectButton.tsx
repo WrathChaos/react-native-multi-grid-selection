@@ -38,8 +38,19 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
         height: 20,
         borderRadius: 20,
         backgroundColor: isActive ? "#fff" : "#e5e8eb",
+        alignItems: "center",
+        justifyContent: "center",
       }}
-    />
+    >
+      <View
+        style={{
+          height: 12,
+          width: 12,
+          borderRadius: 10,
+          backgroundColor: isActive ? activeColor : "#e5e8eb",
+        }}
+      />
+    </View>
   );
 
   return (
