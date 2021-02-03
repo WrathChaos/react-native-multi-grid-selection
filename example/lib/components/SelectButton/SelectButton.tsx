@@ -12,9 +12,11 @@ import styles, {
 } from "./SelectButton.style";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
 export interface ISelectButtonProps {
   style?: CustomStyleProp;
+  textStyle?: CustomTextStyleProp;
   text: string;
   isActive?: boolean;
   activeColor?: string;
@@ -26,6 +28,7 @@ export interface ISelectButtonProps {
 const SelectButton: React.FC<ISelectButtonProps> = ({
   style,
   text,
+  textStyle,
   isActive = false,
   activeColor = "#307ff2",
   onPress,
@@ -40,6 +43,12 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
     </View>
   );
 
+  const renderTextContainer = () => (
+    <View style={styles.textContainer}>
+      <Text style={[_textStyle(isActive), textStyle]}>{text}</Text>
+    </View>
+  );
+
   return (
     <RNBounceable
       bounceEffect={0.95}
@@ -48,9 +57,7 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
     >
       <View style={[styles.buttonStyle, style]}>
         {renderSingleSelectIcon()}
-        <View style={styles.textContainer}>
-          <Text style={_textStyle(isActive)}>{text}</Text>
-        </View>
+        {renderTextContainer()}
       </View>
     </RNBounceable>
   );
