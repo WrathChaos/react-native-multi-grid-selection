@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text, StyleProp, ViewStyle } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 /**
  * ? Local Imports
  */
-import styles, { _container, _iconContainer } from "./SelectButton.style";
-import { act } from "react-test-renderer";
+import styles, {
+  _container,
+  _outerCircleStyle,
+  _innerCircleStyle,
+  _textStyle,
+} from "./SelectButton.style";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 
@@ -32,24 +35,8 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
   /* -------------------------------------------------------------------------- */
 
   const renderSingleSelectIcon = () => (
-    <View
-      style={{
-        width: 20,
-        height: 20,
-        borderRadius: 20,
-        backgroundColor: isActive ? "#fff" : "#e5e8eb",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <View
-        style={{
-          height: 12,
-          width: 12,
-          borderRadius: 10,
-          backgroundColor: isActive ? activeColor : "#e5e8eb",
-        }}
-      />
+    <View style={_outerCircleStyle(isActive)}>
+      <View style={_innerCircleStyle(isActive, activeColor)} />
     </View>
   );
 
@@ -62,14 +49,7 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
       <View style={[styles.buttonStyle, style]}>
         {renderSingleSelectIcon()}
         <View style={styles.textContainer}>
-          <Text
-            style={{
-              fontWeight: "600",
-              color: isActive ? "#fff" : "#757575",
-            }}
-          >
-            {text}
-          </Text>
+          <Text style={_textStyle(isActive)}>{text}</Text>
         </View>
       </View>
     </RNBounceable>
