@@ -30,7 +30,7 @@ export const _container = (
   activeColor: string,
 ): ViewStyle => ({
   backgroundColor: isActive ? activeColor : "#fff",
-  minHeight: 60,
+  height: 60,
   marginTop: 12,
   borderWidth: 1,
   borderRadius: 12,

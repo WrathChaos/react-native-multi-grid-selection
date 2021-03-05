@@ -8,8 +8,7 @@ interface Style {
 
 export default StyleSheet.create<Style>({
   container: {
-    minHeight: 180,
-    alignSelf: "baseline",
+    minHeight: 225,
     width: ScreenWidth * 0.9,
     marginLeft: 16,
     marginTop: 16,
@@ -24,9 +23,7 @@ export default StyleSheet.create<Style>({
     },
   },
   listContentContainerStyle: {
-    flexGrow: 1,
     paddingLeft: 8,
     paddingRight: 8,
-    justifyContent: "center",
   },
 });

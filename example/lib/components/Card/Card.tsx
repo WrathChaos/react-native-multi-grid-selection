@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, StyleProp, ViewStyle } from "react-native";
+import { View, Text, FlatList, StyleProp, ViewStyle } from "react-native";
 /**
  * ? Local Imports
  */
@@ -44,6 +44,19 @@ const Card: React.FC<ICardProps> = ({ style, data, onSelect }) => {
 
   return (
     <View style={[styles.container, style]}>
+      <View
+        style={{
+          height: 50,
+          backgroundColor: "#ccc",
+          justifyContent: "center",
+          borderTopLeftRadius: 12,
+          borderTopRightRadius: 12,
+        }}
+      >
+        <Text style={{ marginLeft: 12, color: "#fff", fontWeight: "bold" }}>
+          Which day?
+        </Text>
+      </View>
       <FlatList
         data={data}
         renderItem={renderButton}
