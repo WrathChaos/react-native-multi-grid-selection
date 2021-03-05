@@ -48,10 +48,7 @@ const Card: React.FC<ICardProps> = ({ style, data, onSelect }) => {
       <FlatList
         data={data}
         renderItem={renderButton}
-        contentContainerStyle={{
-          paddingLeft: 8,
-          paddingRight: 8,
-        }}
+        contentContainerStyle={styles.listContentContainerStyle}
       />
     </View>
   );

@@ -3,6 +3,7 @@ const { width: ScreenWidth } = Dimensions.get("screen");
 
 interface Style {
   container: ViewStyle;
+  listContentContainerStyle: ViewStyle;
 }
 
 export default StyleSheet.create<Style>({
@@ -12,5 +13,9 @@ export default StyleSheet.create<Style>({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fdfdfd",
+  },
+  listContentContainerStyle: {
+    paddingLeft: 8,
+    paddingRight: 8,
   },
 });
