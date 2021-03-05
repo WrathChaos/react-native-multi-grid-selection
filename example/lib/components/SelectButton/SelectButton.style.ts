@@ -33,7 +33,7 @@ export const _container = (
   minHeight: 60,
   marginTop: 12,
   borderWidth: 1,
-  borderRadius: 8,
+  borderRadius: 12,
   alignItems: "center",
   borderColor: "#e9eaea",
   justifyContent: "center",
