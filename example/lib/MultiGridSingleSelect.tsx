@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
  * ? Local Imports
  */
 import styles from "./MultiGridSingleSelect.style";
-import Card from "./components/Card/Card";
+import Card, { ISelectionDataType } from "./components/Card/Card";
 
 interface IMultiGridSingleSelectProps {}
 
@@ -24,8 +24,8 @@ export default class MultiGridSingleSelect extends Component<
       <View>
         <Card
           data={data}
-          onPress={(clicked: any) => {
-            console.log("Clicked: ", clicked);
+          onSelect={(selectedData: ISelectionDataType) => {
+            console.log("onSelect: ", selectedData);
           }}
         />
       </View>

@@ -1,15 +1,14 @@
 import React from "react";
-import { View, Dimensions, FlatList, StyleProp, ViewStyle } from "react-native";
+import { View, FlatList, StyleProp, ViewStyle } from "react-native";
 /**
  * ? Local Imports
  */
 import styles from "./Card.style";
 import SelectButton from "../SelectButton/SelectButton";
 
-const { width: ScreenWidth } = Dimensions.get("screen");
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 
-export interface IButtonDataType {
+export interface ISelectionDataType {
   id: number;
   name: string;
   data?: any;
@@ -17,16 +16,16 @@ export interface IButtonDataType {
 
 interface ICardProps {
   style?: CustomStyleProp;
-  data: Array<IButtonDataType>;
-  onSelect: (buttonData: IButtonDataType) => void;
+  data: Array<ISelectionDataType>;
+  onSelect: (buttonData: ISelectionDataType) => void;
 }
 
 const Card: React.FC<ICardProps> = ({ style, data, onSelect }) => {
   const [selectedItem, setSelectedItem] = React.useState<
-    IButtonDataType | undefined
+    ISelectionDataType | undefined
   >(undefined);
 
-  const handleOnSelectItem = (item: IButtonDataType) => {
+  const handleOnSelectItem = (item: ISelectionDataType) => {
     setSelectedItem(item);
     onSelect && onSelect(item);
   };
