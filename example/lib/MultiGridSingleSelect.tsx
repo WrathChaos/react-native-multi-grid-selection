@@ -46,7 +46,7 @@ export default class MultiGridSingleSelect extends Component<
 
   render() {
     return (
-      <View>
+      <View style={{}}>
         <FlatList horizontal data={newData} renderItem={this.renderCard} />
       </View>
     );
