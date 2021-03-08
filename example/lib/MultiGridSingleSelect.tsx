@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, View, StyleProp, ViewStyle } from "react-native";
 /**
  * ? Local Imports
  */
@@ -9,6 +9,8 @@ import Card, {
   ICardSelectionDataType,
 } from "./components/Card/Card";
 
+type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+
 export interface IMultiSelectionDataType {
   cardId: number;
   title: string;
@@ -16,6 +18,7 @@ export interface IMultiSelectionDataType {
 }
 
 interface IMultiGridSingleSelectProps {
+  listStyle: CustomStyleProp;
   onSelect: (selectedData: Array<ICardSelectionDataType>) => void;
 }
 
@@ -70,9 +73,7 @@ export default class MultiGridSingleSelect extends Component<
   }
 
   handleSelectedData = (selectedItem: ICardSelectionDataType) => {
-    console.log("SelectedOne: ", selectedItem);
     const { onSelect } = this.props;
-
     const index = this.state.selectedItems.findIndex(
       (_item) => _item.cardId === selectedItem.cardId,
     );
@@ -117,8 +118,8 @@ export default class MultiGridSingleSelect extends Component<
           horizontal
           data={newData}
           renderItem={this.renderCard}
-          contentInset={{ right: 16 }}
-          style={{ paddingBottom: 24 }}
+          contentInset={styles.cardListContentInset}
+          style={[styles.listStyle, this.props.listStyle]}
         />
       </View>
     );
