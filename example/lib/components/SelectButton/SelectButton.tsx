@@ -51,7 +51,7 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
 
   return (
     <RNBounceable
-      bounceEffect={0.95}
+      bounceEffect={0.97}
       style={[_container(isActive, activeColor), style]}
       onPress={onPress}
     >
