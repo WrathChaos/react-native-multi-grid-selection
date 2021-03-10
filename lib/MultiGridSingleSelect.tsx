@@ -69,7 +69,7 @@ export default class MultiGridSingleSelect extends React.Component<
   renderCard = (data: any) => {
     return (
       <Card
-        data={data.item}
+        cardData={data.item}
         onSelect={(selectedOne: ICardSelectionDataType) => {
           this.handleSelectedData(selectedOne);
         }}

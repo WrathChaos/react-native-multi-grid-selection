@@ -32,13 +32,13 @@ interface ICardProps {
   cardStyle?: CustomStyleProp;
   headerStyle?: CustomStyleProp;
   headerTextStyle?: CustomTextStyleProp;
-  data: IMultiSelectionDataType;
+  cardData: IMultiSelectionDataType;
   onSelect: (selectedOne: ICardSelectionDataType) => void;
 }
 
 const Card: React.FC<ICardProps> = ({
   cardStyle,
-  data,
+  cardData,
   onSelect,
   headerStyle,
   headerTextStyle,
@@ -50,8 +50,8 @@ const Card: React.FC<ICardProps> = ({
   const handleOnSelectItem = (item: ISelectionDataType) => {
     setSelectedItem(item);
     const selectedData: ICardSelectionDataType = {
-      cardId: data.cardId,
-      title: data.title,
+      cardId: cardData.cardId,
+      title: cardData.title,
       selectedData: item,
     };
     onSelect && onSelect(selectedData);
@@ -62,7 +62,7 @@ const Card: React.FC<ICardProps> = ({
     const isActive = id === selectedItem?.id;
     return (
       <SelectButton
-        text={name}
+        buttonText={name}
         isActive={isActive}
         onPress={() => handleOnSelectItem(data.item)}
       />
@@ -72,14 +72,14 @@ const Card: React.FC<ICardProps> = ({
   const renderHeader = () => (
     <View style={[styles.headerStyle, headerStyle]}>
       <Text style={[styles.headerTextStyle, headerTextStyle]}>
-        {data.title}
+        {cardData.title}
       </Text>
     </View>
   );
 
   const renderList = () => (
     <FlatList
-      data={data.data}
+      data={cardData.data}
       renderItem={renderButton}
       contentContainerStyle={styles.listContentContainerStyle}
       keyExtractor={(item) => `${item.id}`}

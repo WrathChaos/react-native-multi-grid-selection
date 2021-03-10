@@ -1,6 +1,6 @@
 {
   "name": "react-native-multi-grid-selection",
-  "version": "0.0.2-beta",
+  "version": "0.0.4-beta",
   "description": "Fully customizable Multi Grid Card Selection component for React Native on both iOS and Android",
   "main": "./build/dist/MultiGridSingleSelect.js",
   "repository": "git@github.com:WrathChaos/react-native-multi-grid-selection.git",
