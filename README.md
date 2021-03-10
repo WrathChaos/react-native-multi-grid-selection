@@ -54,34 +54,38 @@ You **MUST** follow this data structure to use the `react-native-multi-grid-sele
 const testData: Array<IMultiSelectionDataType> = [
   {
     cardId: 0,
-    title: "Title",
+    title: "What is your favorite NBA Team?",
     data: [
-      { id: 0, name: "Every week" },
-      { id: 1, name: "Every other week" },
+      { id: 0, name: "Los Angeles Lakers" },
+      { id: 1, name: "Golden State Warriors" },
+      { id: 1, name: "Chicago Bulls" },
+      { id: 1, name: "Boston Celtics" },
+      { id: 1, name: "Cleveland" },
+      { id: 1, name: "Miami Heat" },
+    ],
+  },
+  {
+    cardId: 1,
+    title: "Who is the GOAT?",
+    data: [
+      { id: 0, name: "Micheal Jordan" },
+      { id: 1, name: "Wilt Chamberlain" },
+      { id: 2, name: "Lebron James" },
+      { id: 3, name: "Magic Johnson" },
+      { id: 4, name: "Shaquille O'Neal" },
+      { id: 5, name: "Kobe Bryant" },
     ],
   },
   {
     cardId: 2,
-    title: "Title2",
+    title: "Which team will win NBA in 2021?",
     data: [
-      { id: 0, name: "Every week2" },
-      { id: 1, name: "Every other week2" },
-    ],
-  },
-  {
-    cardId: 3,
-    title: "Title3",
-    data: [
-      { id: 0, name: "Every week3" },
-      { id: 1, name: "Every other week3" },
-    ],
-  },
-  {
-    cardId: 4,
-    title: "Title4",
-    data: [
-      { id: 0, name: "Every week4" },
-      { id: 1, name: "Every other week4" },
+      { id: 0, name: "Grizzlies" },
+      { id: 1, name: "Wizards" },
+      { id: 2, name: "Mavericks" },
+      { id: 1, name: "Spurs" },
+      { id: 1, name: "Hornets" },
+      { id: 1, name: "Pistonts" },
     ],
   },
 ];

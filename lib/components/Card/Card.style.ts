@@ -27,6 +27,7 @@ export default StyleSheet.create<Style>({
   listContentContainerStyle: {
     paddingLeft: 8,
     paddingRight: 8,
+    paddingBottom: 16,
   },
   headerStyle: {
     height: 50,
