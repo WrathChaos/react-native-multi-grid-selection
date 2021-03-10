@@ -1,14 +1,19 @@
 {
-  "name": "react-native-typescript-library-starter",
-  "version": "1.0.2",
-  "description": "Extremely easy to create a React Native Component Library with both Stateful and Functional Component Examples.",
-  "main": "./build/dist/index.js",
-  "repository": "git@github.com:WrathChaos/react-native-typescript-library-starter.git",
+  "name": "react-native-multi-grid-selection",
+  "version": "0.1.0",
+  "description": "Fully customizable Multi Grid Card Selection component for React Native on both iOS and Android",
+  "main": "./build/dist/MultiGridSingleSelect.js",
+  "repository": "git@github.com:WrathChaos/react-native-multi-grid-selection.git",
   "author": "FreakyCoder <kurayogun@gmail.com>",
   "license": "MIT",
   "homepage": "https://www.freakycoder.com",
-  "bugs": "https://github.com/WrathChaos/react-native-typescript-library-starter/issues",
+  "bugs": "https://github.com/WrathChaos/react-native-multi-grid-selection/issues",
   "keywords": [
+    "react-native-multi-grid",
+    "grid",
+    "multi-grid",
+    "multi-grid-selection",
+    "react-native-multi-grid-selection",
     "FreakyCoder",
     "freakycoder",
     "kuray",
@@ -27,8 +32,7 @@
     "postversion": "git push && git push --tags"
   },
   "peerDependencies": {
-    "react": ">= 16.x.x",
-    "react-native": ">=0.63.x"
+    "@freakycoder/react-native-bounceable": "^0.2.4"
   },
   "devDependencies": {
     "@types/react": "^16.9.53",

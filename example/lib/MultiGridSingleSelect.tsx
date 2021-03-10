@@ -18,7 +18,7 @@ export interface IMultiSelectionDataType {
 }
 
 interface IMultiGridSingleSelectProps {
-  listStyle: CustomStyleProp;
+  listStyle?: CustomStyleProp;
   onSelect: (selectedData: Array<ICardSelectionDataType>) => void;
 }
 

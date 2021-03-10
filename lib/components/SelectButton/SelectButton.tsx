@@ -1,18 +1,22 @@
-import React from "react";
-import { View, StyleProp, ViewStyle } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
+import * as React from "react";
+import { View, Text, StyleProp, TextStyle, ViewStyle } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 /**
  * ? Local Imports
  */
-import colors from "@colors";
-import Text from "@shared-components/TextWrapper/TextWrapper";
-import styles, { _shadowStyle, _iconContainer } from "./SelectButton.style";
+import styles, {
+  _container,
+  _outerCircleStyle,
+  _innerCircleStyle,
+  _textStyle,
+} from "./SelectButton.style";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
 export interface ISelectButtonProps {
   style?: CustomStyleProp;
+  textStyle?: CustomTextStyleProp;
   text: string;
   isActive?: boolean;
   activeColor?: string;
@@ -24,9 +28,9 @@ export interface ISelectButtonProps {
 const SelectButton: React.FC<ISelectButtonProps> = ({
   style,
   text,
+  textStyle,
   isActive = false,
-  selectMode = false,
-  activeColor = colors.light.primary,
+  activeColor = "#307ff2",
   onPress,
 }) => {
   /* -------------------------------------------------------------------------- */
@@ -34,35 +38,28 @@ const SelectButton: React.FC<ISelectButtonProps> = ({
   /* -------------------------------------------------------------------------- */
 
   const renderSingleSelectIcon = () => (
-    <View
-      style={{
-        height: 20,
-        width: 20,
-        borderRadius: 20,
-        backgroundColor: isActive ? activeColor : "#c1c1c1",
-      }}
-    />
+    <View style={_outerCircleStyle(isActive)}>
+      <View style={_innerCircleStyle(isActive, activeColor)} />
+    </View>
   );
 
-  const renderMultiSelectIcon = () => (
-    <Icon name="check" type="FontAwesome" size={15} color="#fff" />
+  const renderTextContainer = () => (
+    <View style={styles.textContainer}>
+      <Text style={[_textStyle(isActive), textStyle]}>{text}</Text>
+    </View>
   );
 
   return (
-    <View style={_shadowStyle(isActive, activeColor)}>
-      <RNBounceable
-        bounceEffect={0.95}
-        style={[styles.buttonStyle, style]}
-        onPress={onPress}
-      >
-        <View style={_iconContainer(isActive, activeColor, selectMode)}>
-          {selectMode ? renderSingleSelectIcon() : renderMultiSelectIcon()}
-        </View>
-        <View style={styles.textContainer}>
-          <Text color={isActive ? activeColor : "#757575"}>{text}</Text>
-        </View>
-      </RNBounceable>
-    </View>
+    <RNBounceable
+      bounceEffect={0.97}
+      style={[_container(isActive, activeColor), style]}
+      onPress={onPress}
+    >
+      <View style={[styles.buttonStyle, style]}>
+        {renderSingleSelectIcon()}
+        {renderTextContainer()}
+      </View>
+    </RNBounceable>
   );
 };
 

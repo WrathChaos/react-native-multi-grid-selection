@@ -1,52 +1,56 @@
-import { ViewStyle, StyleSheet, Dimensions } from "react-native";
+import { ViewStyle, TextStyle, StyleSheet, Dimensions } from "react-native";
 const { width: ScreenWidth } = Dimensions.get("screen");
 
-export const _shadowStyle = (
-  isActive: boolean,
-  activeColor: string,
-): ViewStyle => ({
-  shadowRadius: 5,
-  shadowOpacity: 0.25,
-  shadowColor: isActive ? activeColor : "#757575",
-  shadowOffset: {
-    width: 0,
-    height: 3,
-  },
-  elevation: 3,
-});
-
-export const _iconContainer = (
-  isActive: boolean,
-  activeColor: string,
-  selectMode: boolean,
-): ViewStyle => ({
-  width: 30,
-  height: 30,
-  borderRadius: 30,
+export const _outerCircleStyle = (isActive: boolean): ViewStyle => ({
+  width: 20,
+  height: 20,
+  borderRadius: 20,
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: isActive
-    ? selectMode
-      ? "#e3e7e6"
-      : activeColor
-    : "#e3e7e6",
+  backgroundColor: isActive ? "#fff" : "#e5e8eb",
+});
+
+export const _innerCircleStyle = (
+  isActive: boolean,
+  activeColor: string,
+): ViewStyle => ({
+  width: 12,
+  height: 12,
+  borderRadius: 10,
+  backgroundColor: isActive ? activeColor : "#e5e8eb",
+});
+
+export const _textStyle = (isActive: boolean): TextStyle => ({
+  fontWeight: "600",
+  color: isActive ? "#fff" : "#757575",
+});
+
+export const _container = (
+  isActive: boolean,
+  activeColor: string,
+): ViewStyle => ({
+  backgroundColor: isActive ? activeColor : "#fff",
+  height: 60,
+  marginTop: 12,
+  borderWidth: 1,
+  borderRadius: 12,
+  alignItems: "center",
+  borderColor: "#e9eaea",
+  justifyContent: "center",
 });
 
 interface Style {
-  container: ViewStyle;
   buttonStyle: ViewStyle;
   textContainer: ViewStyle;
 }
 
 export default StyleSheet.create<Style>({
-  container: {},
   buttonStyle: {
     padding: 12,
     borderRadius: 16,
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "white",
-    width: ScreenWidth * 0.9,
+    width: ScreenWidth * 0.8,
   },
   textContainer: {
     marginLeft: 16,

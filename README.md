@@ -15,28 +15,6 @@
         src="assets/Screenshots/typescript.jpg" />
 </p>
 
-## Library Usage
-
-- `npm i`
-- Delete example folder
-- Delete build folder
-- Make your own library into the `lib` folder
-- Change package.json
-- Change README for your own documentation
-- `npm run build`
-
-```
-> react-native-typescript-library-starter@0.1.0 build /Users/kuray/Coursion/MyLibraries/ReactNative/react-native-typescript-library-starter
-> cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!
-
-Build completed!
-```
-
-- Test your build/dist into the new project
-- Finally, time to npm publish :)
-
-### Below part is for Documentation ! Remove above Library Usage
-
 # Installation
 
 Add the dependency:
@@ -50,8 +28,7 @@ npm i react-native-typescript-library-starter
 <h5><i>IMPORTANT! You need install them</i></h5>
 
 ```js
-"react": ">= 16.x.x",
-"react-native": ">= 0.55.x",
+"@freakycoder/react-native-bounceable": ">= 0.2.4"
 ```
 
 # Usage
@@ -59,13 +36,15 @@ npm i react-native-typescript-library-starter
 ## Import
 
 ```jsx
-import MyComponent from "react-native-typescript-library-starter";
+import MultiGridSingleSelect from "react-native-multi-grid-selection";
 ```
 
 ## Fundamental Usage
 
 ```jsx
-<MyComponent />
+<MultiGridSingleSelect
+  onSelect={(selectedData: any) => console.log("Selected Data: ", selectedData)}
+/>
 ```
 
 ## Example Project 😍
