@@ -28,18 +28,18 @@ export interface ISelectionDataType {
   data?: any;
 }
 
-interface ICardProps {
+export interface ICardProps {
   cardStyle?: CustomStyleProp;
   headerStyle?: CustomStyleProp;
   headerTextStyle?: CustomTextStyleProp;
   cardData: IMultiSelectionDataType;
-  onSelect: (selectedOne: ICardSelectionDataType) => void;
+  onSelectOption: (selectedOption: ICardSelectionDataType) => void;
 }
 
 const Card: React.FC<ICardProps> = ({
   cardStyle,
   cardData,
-  onSelect,
+  onSelectOption,
   headerStyle,
   headerTextStyle,
 }) => {
@@ -54,7 +54,7 @@ const Card: React.FC<ICardProps> = ({
       title: cardData.title,
       selectedData: item,
     };
-    onSelect && onSelect(selectedData);
+    onSelectOption && onSelectOption(selectedData);
   };
 
   const renderButton = (data: any) => {

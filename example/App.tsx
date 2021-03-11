@@ -11,10 +11,10 @@ const testData: Array<IMultiSelectionDataType> = [
     data: [
       { id: 0, name: "Los Angeles Lakers" },
       { id: 1, name: "Golden State Warriors" },
-      { id: 1, name: "Chicago Bulls" },
-      { id: 1, name: "Boston Celtics" },
-      { id: 1, name: "Cleveland" },
-      { id: 1, name: "Miami Heat" },
+      { id: 2, name: "Chicago Bulls" },
+      { id: 3, name: "Boston Celtics" },
+      { id: 4, name: "Cleveland" },
+      { id: 5, name: "Miami Heat" },
     ],
   },
   {
@@ -36,9 +36,9 @@ const testData: Array<IMultiSelectionDataType> = [
       { id: 0, name: "Grizzlies" },
       { id: 1, name: "Wizards" },
       { id: 2, name: "Mavericks" },
-      { id: 1, name: "Spurs" },
-      { id: 1, name: "Hornets" },
-      { id: 1, name: "Pistonts" },
+      { id: 3, name: "Spurs" },
+      { id: 4, name: "Hornets" },
+      { id: 5, name: "Pistonts" },
     ],
   },
 ];
@@ -50,6 +50,7 @@ const App = () => {
       <SafeAreaView style={{ flex: 1 }}>
         <MultiGridSingleSelect
           data={testData}
+          headerStyle={{ backgroundColor: "red" }}
           onSelect={(selectedData: any) =>
             console.log("Selected Data: ", selectedData)
           }

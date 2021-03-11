@@ -7,6 +7,7 @@ import styles from "./MultiGridSingleSelect.style";
 import Card, {
   ISelectionDataType,
   ICardSelectionDataType,
+  ICardProps,
 } from "./components/Card/Card";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
@@ -17,7 +18,7 @@ export interface IMultiSelectionDataType {
   data: Array<ISelectionDataType>;
 }
 
-export interface IMultiGridSingleSelectProps {
+export interface IMultiGridSingleSelectProps extends ICardProps {
   data: Array<IMultiSelectionDataType>;
   listStyle?: CustomStyleProp;
   onSelect: (selectedData: Array<ICardSelectionDataType>) => void;
@@ -70,8 +71,8 @@ export default class MultiGridSingleSelect extends React.Component<
     return (
       <Card
         cardData={data.item}
-        onSelect={(selectedOne: ICardSelectionDataType) => {
-          this.handleSelectedData(selectedOne);
+        onSelectOption={(selectedOption: ICardSelectionDataType) => {
+          this.handleSelectedData(selectedOption);
         }}
       />
     );
