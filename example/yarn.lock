@@ -5611,10 +5611,10 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react-native-multi-grid-selection@^0.1.2":
-  "integrity" "sha512-autKtI9wCsHONOC1aj9tFzhqV3oumgWOtskaEJDaBH9dnihZp8PD0o4Ra8Za8uQkX1kl/R79IHnYAtP83ciCJg=="
-  "resolved" "https://registry.npmjs.org/react-native-multi-grid-selection/-/react-native-multi-grid-selection-0.1.2.tgz"
-  "version" "0.1.2"
+"react-native-multi-grid-selection@^0.1.6":
+  "integrity" "sha512-reVhQaEmg0gv6kv78f1XOco6h0XUkhdfWQb0ld0eUTaeCLm8tGNZz64u8MXCJmLYMSLhizn8b/ZJL3rKwU70eA=="
+  "resolved" "https://registry.npmjs.org/react-native-multi-grid-selection/-/react-native-multi-grid-selection-0.1.6.tgz"
+  "version" "0.1.6"
 
 "react-native@0.63.4":
   "integrity" "sha512-I4kM8kYO2mWEYUFITMcpRulcy4/jd+j9T6PbIzR0FuMcz/xwd+JwHoLPa1HmCesvR1RDOw9o4D+OFLwuXXfmGw=="

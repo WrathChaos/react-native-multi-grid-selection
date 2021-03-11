@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaView, StatusBar } from "react-native";
 import MultiGridSingleSelect, {
   IMultiSelectionDataType,
-} from "./lib/MultiGridSingleSelect";
+} from "react-native-multi-grid-selection";
 
 const testData: Array<IMultiSelectionDataType> = [
   {
@@ -47,9 +47,13 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView
+        style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      >
         <MultiGridSingleSelect
           data={testData}
+          listStyle={{ maxHeight: 600 }}
+          headerStyle={{ backgroundColor: "#7db1ff" }}
           onSelect={(selectedData: any) =>
             console.log("Selected Data: ", selectedData)
           }

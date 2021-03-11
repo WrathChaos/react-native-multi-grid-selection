@@ -42,6 +42,7 @@ const Card: React.FC<ICardProps> = ({
   onSelectOption,
   headerStyle,
   headerTextStyle,
+  ...rest
 }) => {
   const [selectedItem, setSelectedItem] = React.useState<
     ISelectionDataType | undefined
@@ -62,7 +63,7 @@ const Card: React.FC<ICardProps> = ({
     const isActive = id === selectedItem?.id;
     return (
       <SelectButton
-        {...this.props}
+        {...rest}
         buttonText={name}
         isActive={isActive}
         onPress={() => handleOnSelectItem(data.item)}
